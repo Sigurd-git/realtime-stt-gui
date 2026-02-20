@@ -32,6 +32,10 @@ macOS 需要麦克风权限，首次运行时请在“系统设置 -> 隐私与�
 python3 main.py
 ```
 
+演示视频：
+
+- [gui.mov](./gui.mov)
+
 GUI 中新增“记住密钥”选项（勾选后会保存到 `~/.config/realtime-stt-gui/config.json`，明文存储）。下次启动会自动填充。
 若你在日志里看到 `sk-svc...` 这种前缀，属于非标准 OpenAI API Key 场景，通常会返回 `invalid_api_key`；请确认使用的是平台 API Keys 列表里的 `sk-...` 或 `sk-proj-...`。
 
@@ -54,6 +58,10 @@ python3 main.py --debug
 ```bash
 OPENAI_API_KEY=... python3 main.py --cli
 ```
+
+演示视频：
+
+- [cli.mov](./cli.mov)
 
 或
 
@@ -89,4 +97,3 @@ python3 -m PyInstaller RealtimeSTT.spec
 ```
 
 脚本会在 `dist/` 下生成 `RealtimeSTT.app`。
-
