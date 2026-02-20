@@ -39,19 +39,9 @@ python3 main.py
 GUI 中新增“记住密钥”选项（勾选后会保存到 `~/.config/realtime-stt-gui/config.json`，明文存储）。下次启动会自动填充。
 若你在日志里看到 `sk-svc...` 这种前缀，属于非标准 OpenAI API Key 场景，通常会返回 `invalid_api_key`；请确认使用的是平台 API Keys 列表里的 `sk-...` 或 `sk-proj-...`。
 
-若无字幕，可先跑 debug 输出：
-
-```bash
-python3 main.py --debug
-```
-
-GUI 下加上：
-
-```bash
-python3 main.py --debug
-```
-
-观察 `[raw] ...` 里的 `type` 是否有 `transcript`/`delta` 关键字，按需贴出来我再帮你继续适配。
+GUI 的 `Prompt` 输入框对应转写会话中的 `prompt`，它会随每次启动时的会话配置一起传给 OpenAI 的实时转写服务。
+作用是提供上下文偏置，帮助模型更好识别你当前场景中的专有名词、术语、缩写、姓名等；例如医疗名词、产品名、口音较重场景。
+如果不需要，可保持空；修改后会在下次点击 `开始` 时生效。对应 CLI 可用 `--prompt` 参数。
 
 ### 终端模式
 
