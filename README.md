@@ -4,10 +4,6 @@
 
 ## 运行前准备
 
-```bash
-python3 -m pip install websocket-client pyaudio
-```
-
 ### 用 uv 部署环境
 
 ```bash
